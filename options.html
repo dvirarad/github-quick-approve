@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>GitHub Quick Approve: Settings</title>
+  <style>
+    body { font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; max-width: 560px; margin: 40px auto; padding: 0 16px; color: #1f2328; }
+    h1 { font-size: 20px; }
+    input { width: 100%; box-sizing: border-box; padding: 8px; font: 13px monospace; border: 1px solid #d0d7de; border-radius: 6px; }
+    button { margin-top: 12px; padding: 6px 16px; border: 0; border-radius: 6px; background: #1f883d; color: #fff; font-weight: 600; cursor: pointer; }
+    #status { margin-top: 12px; min-height: 20px; }
+    .ok { color: #1a7f37; } .err { color: #cf222e; }
+    code { background: #f6f8fa; padding: 1px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>GitHub Quick Approve</h1>
+  <p>Paste a GitHub personal access token. It's stored only in this browser (<code>chrome.storage.local</code>) and sent only to <code>api.github.com</code>.</p>
+  <ul>
+    <li><b>Fine-grained token:</b> repository permission <i>Pull requests: Read and write</i>, covering the repos you review.</li>
+    <li><b>Classic token:</b> the <code>repo</code> scope. If your org uses SSO, click <i>Configure SSO → Authorize</i> on the token.</li>
+  </ul>
+  <p><a href="https://github.com/settings/personal-access-tokens/new" target="_blank">Create a fine-grained token</a> ·
+     <a href="https://github.com/settings/tokens/new?scopes=repo&description=GitHub%20Quick%20Approve" target="_blank">Create a classic token</a></p>
+  <input id="token" type="password" placeholder="github_pat_… or ghp_…" autocomplete="off">
+  <button id="save">Save &amp; test</button>
+  <div id="status"></div>
+  <script src="options.js"></script>
+</body>
+</html>
